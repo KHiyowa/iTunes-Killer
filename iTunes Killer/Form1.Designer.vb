@@ -49,7 +49,7 @@ Partial Class Form1
         'Timer
         '
         Me.Timer.Enabled = True
-        Me.Timer.Interval = 1200000
+        Me.Timer.Interval = 900000
         '
         'Form1
         '
