@@ -6,11 +6,21 @@
         QuitApp()
     End Sub
 
+    Private Sub KillBtn_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles KillBtn.LinkClicked
+        iTunesKill()
+        QuitApp()
+    End Sub
+
     ' タイマー起動時に実行する処理
     Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
+        iTunesKill()
+        QuitApp()
+    End Sub
+
+    ' Killコマンド
+    Private Sub iTunesKill()
         Dim p As System.Diagnostics.Process =
             Process.Start("taskkill", "/IM " + ImageNameExt)
-        QuitApp()
     End Sub
 
     ' アプリケーションの終了
@@ -25,4 +35,5 @@
         End If
         Return False ' 起動していなければFalse
     End Function
+
 End Class
